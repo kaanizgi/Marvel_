@@ -1,13 +1,22 @@
 ### Marvel Characters
 -Marvel Api ile geliştirildi
+
 -Anasayfada karakterler listeleniyor ve favorilere ekleyip çıkarabilirsiniz
+
 -Açılışta 30 adet listeleniyor ve scroll ile 30'ar şekilde artarak ilerliyor
+
 -Karaktere tıkladığınızda detay sayfasına yönlendirilir
+
 -Detay sayfasında Adı-Fotoğrafı-Açıklaması ve çizgi romanları listelenir
+
 -Çizgi romanlar 2005 yılından itibaren listelenir,10 adet ile sınırlıdır ve yeniden eskiye göre sıralanır
+
 -Detay sayfasında favorilere ekleyip çıkartabilirsiniz
+
 -Favori sayfasından karakterin detayına ulaşabilirsiniz
+
 -Favoriler sayfasında swipe action kullanarak favori listesinden çıkarabilirsiniz
+
 
 
 
