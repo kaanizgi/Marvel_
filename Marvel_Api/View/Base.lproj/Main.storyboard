@@ -35,7 +35,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5le-if-kRx">
-                                                    <rect key="frame" x="20" y="159.5" width="57" height="28.5"/>
+                                                    <rect key="frame" x="20" y="161.5" width="57" height="26.5"/>
                                                     <color key="backgroundColor" systemColor="systemRedColor"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,9 +44,10 @@
                                                     <size key="shadowOffset" width="1" height="0.0"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCf-Qm-0Y9">
-                                                    <rect key="frame" x="358" y="11" width="56" height="46"/>
+                                                    <rect key="frame" x="338" y="11" width="56" height="46"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="46" id="RiO-z6-Ha3"/>
+                                                        <constraint firstAttribute="width" constant="56" id="baj-Qr-gBO"/>
+                                                        <constraint firstAttribute="height" constant="46" id="ffM-lp-JnN"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="Favorites"/>
@@ -57,14 +58,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="5le-if-kRx" secondAttribute="bottom" constant="12" id="5vO-XM-def"/>
-                                                <constraint firstAttribute="trailing" secondItem="lCf-Qm-0Y9" secondAttribute="trailing" id="7sq-aT-eCt"/>
-                                                <constraint firstItem="lCf-Qm-0Y9" firstAttribute="leading" secondItem="R2m-xu-38Z" secondAttribute="leading" constant="358" id="CsH-xz-1Oc"/>
                                                 <constraint firstItem="5le-if-kRx" firstAttribute="leading" secondItem="R2m-xu-38Z" secondAttribute="leading" constant="20" id="DgW-Az-Zme"/>
                                                 <constraint firstAttribute="bottom" secondItem="c5F-xo-SWJ" secondAttribute="bottom" id="Hng-j2-2Mw"/>
+                                                <constraint firstAttribute="trailing" secondItem="lCf-Qm-0Y9" secondAttribute="trailing" constant="20" id="Mjv-St-ThB"/>
+                                                <constraint firstItem="lCf-Qm-0Y9" firstAttribute="top" secondItem="R2m-xu-38Z" secondAttribute="top" constant="11" id="d84-er-nI0"/>
                                                 <constraint firstItem="c5F-xo-SWJ" firstAttribute="top" secondItem="R2m-xu-38Z" secondAttribute="top" id="guy-iJ-VmQ"/>
-                                                <constraint firstItem="5le-if-kRx" firstAttribute="top" secondItem="lCf-Qm-0Y9" secondAttribute="bottom" constant="102.5" id="ls8-Ga-5EJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="c5F-xo-SWJ" secondAttribute="trailing" id="pYp-5H-hxL"/>
-                                                <constraint firstItem="lCf-Qm-0Y9" firstAttribute="top" secondItem="R2m-xu-38Z" secondAttribute="top" constant="11" id="pgg-kl-o2Y"/>
                                                 <constraint firstItem="c5F-xo-SWJ" firstAttribute="leading" secondItem="R2m-xu-38Z" secondAttribute="leading" id="zUC-Ln-5zz"/>
                                             </constraints>
                                         </tableViewCellContentView>
