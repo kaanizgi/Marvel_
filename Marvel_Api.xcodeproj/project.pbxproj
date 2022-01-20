@@ -24,11 +24,11 @@
 		FF92926B27931B5B0078528D /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92926A27931B5B0078528D /* Comics.swift */; };
 		FF92926D27931BC00078528D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92926C27931BC00078528D /* DetailViewController.swift */; };
 		FF92927027931D8E0078528D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92926F27931D8E0078528D /* TableViewCell.swift */; };
-		FF92927327931E790078528D /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92927227931E790078528D /* WebService.swift */; };
 		FF929275279325D30078528D /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF929274279325D30078528D /* DetailCollectionViewCell.swift */; };
 		FFB35162279406BD00F5C82F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB35161279406BD00F5C82F /* FavoritesViewController.swift */; };
 		FFB3516427940BA500F5C82F /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3516327940BA500F5C82F /* FavoriteTableViewCell.swift */; };
 		FFCF7252279394F800118AC6 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF7251279394F800118AC6 /* Favorites.swift */; };
+		FFE4724127999DA800BABE38 /* NewWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4724027999DA800BABE38 /* NewWebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,11 +76,11 @@
 		FF92926A27931B5B0078528D /* Comics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
 		FF92926C27931BC00078528D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FF92926F27931D8E0078528D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		FF92927227931E790078528D /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		FF929274279325D30078528D /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		FFB35161279406BD00F5C82F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		FFB3516327940BA500F5C82F /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		FFCF7251279394F800118AC6 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		FFE4724027999DA800BABE38 /* NewWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +230,7 @@
 		FF92927127931E6D0078528D /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				FF92927227931E790078528D /* WebService.swift */,
+				FFE4724027999DA800BABE38 /* NewWebService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -484,13 +484,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF92927327931E790078528D /* WebService.swift in Sources */,
 				FF92923827931A530078528D /* ViewController.swift in Sources */,
 				FF92927027931D8E0078528D /* TableViewCell.swift in Sources */,
 				FF929275279325D30078528D /* DetailCollectionViewCell.swift in Sources */,
 				FF92926527931ADF0078528D /* Config.swift in Sources */,
 				FFCF7252279394F800118AC6 /* Favorites.swift in Sources */,
 				FF92923427931A530078528D /* AppDelegate.swift in Sources */,
+				FFE4724127999DA800BABE38 /* NewWebService.swift in Sources */,
 				FFB3516427940BA500F5C82F /* FavoriteTableViewCell.swift in Sources */,
 				FF92923627931A530078528D /* SceneDelegate.swift in Sources */,
 				FF92926927931B3E0078528D /* Characters.swift in Sources */,
