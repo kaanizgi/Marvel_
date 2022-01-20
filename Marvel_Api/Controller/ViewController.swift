@@ -10,20 +10,19 @@ import SDWebImage
 import Alamofire
 import RealmSwift
 
-var MCList = [MCListCharacter]()
+
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableViewim: UITableView!
     private let realm = try! Realm()
     private var favorites: Results<Favorite>?
-    
     var limitim = 5
-
+    private var MCList = [MCListCharacter]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
         favorites = realm.objects(Favorite.self)
-        WebService().getCharacters(tableView: tableViewim, limit: 30)
-        
+   
     }
     override func viewWillAppear(_ animated: Bool) {
         tableViewim.reloadData()
@@ -66,9 +65,11 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == MCList.count - 1 {
             limitim = limitim + 30
-            WebService().updateCharacters(tableView: tableViewim, limit: limitim)
+            updateData()
         }
     }
+    
+    
 }
 
 extension ViewController:saveButtonPath {
@@ -104,5 +105,39 @@ extension ViewController:saveButtonPath {
     }
     }
     
-
-
+extension ViewController {
+    func updateData() {
+        let parameters: Parameters = ["apikey": "\(App.publickey)","hash": "\(App.hash)","ts": "\(App.ts)","offset":limitim,"limit":"30"]
+        NewWebService().requestUrl(url:URL(string:App.serviceurl+"characters"), parameters: parameters,
+                expecting: MCListCharactersResponse.self)
+                { Result in
+                    switch Result {
+                    case.success(let datas):
+                        DispatchQueue.main.async{
+                            self.MCList.append(contentsOf: datas.data.results)
+                            self.tableViewim.reloadData()
+                        }
+                    case.failure(let error):
+                        print(error)
+                    }
+            }
+    }
+    
+    func getData() {
+        let parameters: Parameters = ["apikey": "\(App.publickey)","hash": "\(App.hash)","ts": "\(App.ts)","limit": 30]
+        NewWebService().requestUrl(url:URL(string:App.serviceurl+"characters"), parameters: parameters,
+                expecting: MCListCharactersResponse.self)
+                { Result in
+                    switch Result {
+                    case.success(let datas):
+                        DispatchQueue.main.async{
+                            self.MCList = datas.data.results
+                            self.tableViewim.reloadData()
+                            
+                        }
+                    case.failure(let error):
+                        print(error)
+                    }
+            }
+    }
+}

@@ -11,7 +11,7 @@ import Alamofire
 import CryptoSwift
 import RealmSwift
 
-var ComicList = [ComicResult]()
+
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     var detailDescrp = ""
     var detailThumbnail = ""
     var characterID = ""
+    var ComicList = [ComicResult]()
     private let realm = try! Realm()
     private var favorites: Results<Favorite>?
     
@@ -42,7 +43,7 @@ class DetailViewController: UIViewController {
         thumbnail.sd_setImage(with: URL(string: detailThumbnail))
         
         //
-        WebService().getComics(collectionView: collectionViewim, characterid: characterID)
+        getComics()
         
         //CollectionView
         collectionViewim.collectionViewLayout = UICollectionViewFlowLayout()
@@ -82,9 +83,6 @@ class DetailViewController: UIViewController {
                             }
                         }
             }
-        
-        
-        
     
 }
 extension DetailViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
@@ -117,8 +115,28 @@ extension DetailViewController:UICollectionViewDelegate,UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(10)
     }
-    
-    
 }
 
 
+extension DetailViewController {
+    func getComics() {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        let now = df.string(from: Date())
+        let parameters: Parameters = ["apikey": "\(App.publickey)","hash": "\(App.hash)","ts": "\(App.ts)","limit": 10,"dateRange": "2005-01-01,\(now)","orderBy": "-focDate"]
+        
+        NewWebService().requestUrl(url:URL(string:App.serviceurl + "characters/"+"\(characterID)"+"/comics"), parameters: parameters,
+                expecting: ComicsServerModel.self)
+                { Result in
+                    switch Result {
+                    case.success(let datas):
+                        DispatchQueue.main.async{
+                            self.ComicList = datas.data.results!
+                            self.collectionViewim.reloadData()
+                        }
+                    case.failure(let error):
+                        print(error)
+                    }
+            }
+    }
+}
